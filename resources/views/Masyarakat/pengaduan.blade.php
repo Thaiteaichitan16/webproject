@@ -66,6 +66,9 @@
                     <div class="container">
                             <div class="card shadow m-auto" style="width: 400px">
                                 <div class="card-body">
+                                  <div class="alert alert-danger" role="alert">
+                                    Terimakasih Sudah Melapor!
+                                  </div>
                                     <h4 class="h4">Tulis Laporan Anda</h4>
                                     @if (session('pesan'))
                                     <div class="alert alert-success" role="alert">

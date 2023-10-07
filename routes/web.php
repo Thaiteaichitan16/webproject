@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\MasyarakatController;
 use Illuminate\Support\Facades\Route;
 
@@ -47,3 +48,5 @@ Route::post('laporan',[MasyarakatController::class,'laporan']);
 Route::get('tampilankedua',[MasyarakatController::class,'tampilankedua']);
 Route::get('logout',[MasyarakatController::class,'logout']);
 
+
+Route::get('validasi',[AdminControllerController::class,'validasi']);
