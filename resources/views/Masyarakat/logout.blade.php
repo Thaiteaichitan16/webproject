@@ -23,19 +23,8 @@
         align-items: center;
         min-height: 90vh;
         }
-        .bok1{
-        width: 350px;
-        display: flex;
-        flex-direction: column;
-        padding: 0 15px 0 15px;
-        }
-        span{
-        color: #fff;
-        font-size: small;
-        display: flex;
-        justify-content: center;
-        padding: 10px 0 10px 0;
-        }
+        
+        
         header{
         color: black;
         font-size: 30px;
@@ -49,21 +38,10 @@
         padding: 10px 0 10px 0;
         margin: auto;
         }
-        .input{
-        height: 45px;
-        width: 78%;
-        border: none;
-        outline: none;
-        border-radius: 10px;
-        color: black;
-        margin-top: 7px;
-        padding: 0 0 0 50px ;
-        background:rgba(255, 255, 255,0.1) ;
-        }
-        ::-webkit-input-placeholder{
-        color: black;
-        }
+        
+        
         .sumbit{
+        
         border: none;
         border-radius: 30px;
         font-size: 15px;
@@ -77,22 +55,7 @@
         .submit:hover{
         box-shadow: 1px 5px 7px 1px rgba(0,0,0,0.2) ;
         }
-        .bottom{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        font-size: small;
-        color: #fff;
-        margin-top: 10px;
-        }
-        .left{
-        display: flex;
-        padding: 2px;
-        }
-        label a{
-        color: black;
-        text-decoration: none;
-        }
+        
         </style>
         <div class="box">
         <div class="box1">

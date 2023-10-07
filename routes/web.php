@@ -18,9 +18,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('regis1', function () {
     return view('regismasyarakat');
 });
-Route::get('logouty', function () {
-    return view('logout');
-});
+
+
 // Route::get('tampilan', function () {
 //     return view('tampilanutama');
 // });
@@ -44,3 +43,7 @@ Route::post('login',[MasyarakatController::class,'ceklogin']);
 
 Route::get('pengaduan',[MasyarakatController::class,'pengaduan']);
 Route::post('laporan',[MasyarakatController::class,'laporan']);
+//tampilan kedua sesudah login
+Route::get('tampilankedua',[MasyarakatController::class,'tampilankedua']);
+Route::get('logout',[MasyarakatController::class,'logout']);
+

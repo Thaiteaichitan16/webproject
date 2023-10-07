@@ -38,6 +38,9 @@ class MasyarakatController extends Controller
     public function login(){
         return view('Masyarakat.login');
     }
+    public function logout(){
+        return view('Masyarakat.logout');
+    }
         public function tampilanutama(){
         return view('Masyarakat.tampilanutama');
     }
@@ -51,6 +54,9 @@ class MasyarakatController extends Controller
     }
     public function pengaduan(){
         return view('Masyarakat.pengaduan');
+    }
+    public function tampilankedua(){
+        return view('Masyarakat.tampilankedua');
     }
 
 }
