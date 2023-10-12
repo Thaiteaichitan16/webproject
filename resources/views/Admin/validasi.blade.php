@@ -31,7 +31,7 @@
                     <tbody>
                         @foreach ($datasiswa as $item)
                         <tr>
-                            <td>{{$item->nisn}}</td>
+                            <td>{{$item->}}</td>
                             <td>{{$item->nama}}</td>
                             <td>{{$item->alamat}}</td>
                             <td>{{$item->no_telp}}</td>
