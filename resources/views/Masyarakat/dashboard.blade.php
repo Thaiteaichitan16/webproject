@@ -70,16 +70,8 @@
 </nav>
 
 {{-- // tampilan surat  --}}
-<div>
-    <form action="" method="post">
-    <h1>Layanan Aspirasi dan Panduan Online Masyarakat</h1>
-    <header>Sampaikan laporan Anda langsung kepada instansi pemerintah berwenang</header>
-    </div>
-    </form>
-    </div>
-</head>
-
+@yield('isisurat')
 		</tbody>
-	</table>
+  
 </body>
 </html>

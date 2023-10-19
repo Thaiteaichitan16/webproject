@@ -8,6 +8,6 @@ class AdminController extends Controller
 {
     //
     public function validasi(){
-        return view('Admin.validasi');
+        
     }
 }

@@ -3,18 +3,19 @@
 namespace App\Http\Controllers;
 
 use App\Models\Masyarakat;
+use App\Models\Pengaduan;
 use Illuminate\Http\Request;
 
 class MasyarakatController extends Controller
 {
-    //
+    //halaman regis
     public function registrasi(){
         $m = new Masyarakat();
         return view('Masyarakat.registrasi');
     }
     
 
-    public function simpan(Request $request){
+public function simpan(Request $request){
         $m = new Masyarakat();
         // cek data yang dikirim user
         $cek = $request->validate([
@@ -34,30 +35,50 @@ class MasyarakatController extends Controller
         ]);
     return back()->with('pesan','Selamat, Registrasi Berhasil');
     }
-
+    // halaman login
     public function login(){
         return view('Masyarakat.login');
     }
-    public function logout(){
-        return view('Masyarakat.logout');
-    }
-        public function tampilanutama(){
-        return view('Masyarakat.tampilanutama');
-    }
+
     public function ceklogin(Request $request){
         $m = new Masyarakat();
         // cek username dan password
         if($m->where('username',$request->input('username'))->where('password',$request->input('password'))->exists()){
-            return redirect('tampilanutama');
+            return redirect('');
         }
         return back()->with('pesan', 'Username dan Password tidak terdaftar');
     }
+    //laporan pengaduan
     public function pengaduan(){
         return view('Masyarakat.pengaduan');
     }
-    public function tampilankedua(){
-        return view('Masyarakat.tampilankedua');
-    }
+    public function laporan(Request $request){
+        $p = $request->validate([
+            'nik'=>'required|max16',
+            'tanggal_pengaduan'=>'required|date',
+            'foto'=>'required',
+            'isi_laporan'=>'required'
+        ]);
 
+        $ya = new Pengaduan();
+        $ya->create([
+            'nik'=>$request->nik,
+            'tanggal_pengaduan'=>$request->tanggal_pengaduan,
+            'foto'=>$request->foto,
+            'isi_laporan'=>$request->isi_laporan
+        ]);
+        return redirect('Masyarakat/pengaduan')->with('pesan','Laporan berhasil dikirim');
+    }
+    //tampilan masyarakat
+    public function dashboard(){
+        return view('Masyarakat.dashboard');
+    }
+    // halaman logout
+    public function logout(){
+        return view('Masyarakat.logout');
+    }
+      
+    
+    
 }
 

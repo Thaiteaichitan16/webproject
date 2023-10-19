@@ -22,29 +22,22 @@ use Illuminate\Support\Facades\Route;
 // Route::get('tampilan', function () {
 //     return view('tampilanutama');
 // });
-Route::get('lapor', function () {
-    return view('lapor');
-});
-Route::get('contoh', function () {
-    return view('contoh');
-});
-
-
 
 //  data masyarakat
 Route::get('masyarakat',[MasyarakatController::class,'index']);
 Route::get('registrasi',[MasyarakatController::class,'registrasi']);
 Route::post('simpan',[MasyarakatController::class,'simpan']);
-// data login
-Route::get('tampilanutama',[MasyarakatController::class,'tampilanutama']);
+// tampilan dashboard masyarakat
+Route::get('layoutmasyarakat',[MasyarakatController::class,'dashboard']);
+//data login
 Route::get('login',[MasyarakatController::class,'login']);
 Route::post('login',[MasyarakatController::class,'ceklogin']);
-
+//buat laporan
 Route::get('pengaduan',[MasyarakatController::class,'pengaduan']);
 Route::post('laporan',[MasyarakatController::class,'laporan']);
-//tampilan kedua sesudah login
-Route::get('tampilankedua',[MasyarakatController::class,'tampilankedua']);
-Route::get('logout',[MasyarakatController::class,'logout']);
 
 
-Route::get('validasi',[AdminControllerController::class,'validasi']);
+// Route::get('logout',[MasyarakatController::class,'logout']);
+
+
+Route::get('validasi',[AdminController::class,'validasi']);
