@@ -1,20 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Login | Masyarakat</title>
+    <title>Login | Admin</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    
     <style>
         * {
             font-family: 'poppins', sans serif;
         }
 
         body {
-            background: linear-gradient(120deg, #ffcfdf, #a5dee5);
+            background: linear-gradient(120deg, #a5dee5,#ffcfdf, #a5dee5);
             background-size: cover;
             height: 100vh;
             background-repeat: no-repeat;
@@ -111,7 +109,8 @@
             text-decoration: none;
         }
     </style>
-      
+</head>
+<body>
     <div class="box">
         <div class="box1">
             <div class="top-header">
@@ -142,7 +141,5 @@
             </div>
         </div>
     </div>
-    
-    </body>
-
+</body>
 </html>

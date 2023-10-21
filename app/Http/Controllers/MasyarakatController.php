@@ -44,7 +44,7 @@ public function simpan(Request $request){
         $m = new Masyarakat();
         // cek username dan password
         if($m->where('username',$request->input('username'))->where('password',$request->input('password'))->exists()){
-            return redirect('');
+            return redirect('/masyarakat/masyarakat');
         }
         return back()->with('pesan', 'Username dan Password tidak terdaftar');
     }
@@ -53,21 +53,22 @@ public function simpan(Request $request){
         return view('Masyarakat.pengaduan');
     }
     public function laporan(Request $request){
+        $ya = new Pengaduan();
         $p = $request->validate([
-            'nik'=>'required|max16',
+            'nik'=>'required|max1 6',
             'tanggal_pengaduan'=>'required|date',
             'foto'=>'required',
             'isi_laporan'=>'required'
         ]);
 
-        $ya = new Pengaduan();
+       
         $ya->create([
             'nik'=>$request->nik,
             'tanggal_pengaduan'=>$request->tanggal_pengaduan,
             'foto'=>$request->foto,
             'isi_laporan'=>$request->isi_laporan
         ]);
-        return redirect('Masyarakat/pengaduan')->with('pesan','Laporan berhasil dikirim');
+        return redirect('/masyarakat/pengaduan')->with('pesan','Laporan berhasil dikirim');
     }
     //tampilan masyarakat
     public function dashboard(){
