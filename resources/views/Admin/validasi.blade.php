@@ -20,22 +20,24 @@
                 <table class="table table-sm table-striped table-bordered">
                     <thead>
                         <tr>
-                            <th>No</th>
-                            <th>NIK</th>
+                            <th>ID</th>
                             <th>Tanggal</th>
-                            <th >Foto </th>
+                            <th>NIK</th>
                             <th >Isi Laporan</th>
-                            <th >validasi</th>
+                            <th >Foto</th>
+                            <th >Status</th>
+                            <th >Validasi</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($datasiswa as $item)
+                        @foreach ($ya as $item)
                         <tr>
-                            <td>{{$item->}}</td>
-                            <td>{{$item->nama}}</td>
-                            <td>{{$item->alamat}}</td>
-                            <td>{{$item->no_telp}}</td>
-                            <td>{{$item->kode_kelas}}</td>
+                            <td>{{$item->id_pengaduan}}</td>
+                            <td>{{$item->tgl_pengaduan}}</td>
+                            <td>{{$item->nik}}</td>
+                            <td>{{$item->isi_laporan}}</td>
+                            <td>{{$item->foto}}</td>
+                            <td>{{$item->status}}</td>
                             <td >
                                 <a href="{{url('siswa/edit/'.$item->nisn)}}" class="btn btn-success btn-sm">
                                     <i class="bi bi-pencil-square"></i>

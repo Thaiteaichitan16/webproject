@@ -59,7 +59,6 @@ public function simpan(Request $request){
             'tgl_pengaduan'=>'required|date',
             'foto'=>'required',
             'isi_laporan'=>'required'
-            
         ]);
 
        
