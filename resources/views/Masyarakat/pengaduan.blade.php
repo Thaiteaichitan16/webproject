@@ -77,10 +77,10 @@
                                     @endif
                                     @if ($errors->any())
                                     <div class="alert alert-success" role="alert">
-                                        Anda gagal registrasi
+                                        Anda Gagal Lapor
                                       </div>
                                     @endif
-                                        <form action="{{url('laporan')}}" method="POST">
+                                        <form action="{{url('masyarakat/pengaduan')}}" method="POST">
                                             @csrf
                                             <div class="mb-3">
                                                 <label for="nik" class="form-label">NIK</label>

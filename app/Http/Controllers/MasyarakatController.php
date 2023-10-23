@@ -55,20 +55,22 @@ public function simpan(Request $request){
     public function laporan(Request $request){
         $ya = new Pengaduan();
         $p = $request->validate([
-            'nik'=>'required|max1 6',
-            'tanggal_pengaduan'=>'required|date',
+            'nik'=>'required|max:16',
+            'tgl_pengaduan'=>'required|date',
             'foto'=>'required',
             'isi_laporan'=>'required'
+            
         ]);
 
        
         $ya->create([
             'nik'=>$request->nik,
-            'tanggal_pengaduan'=>$request->tanggal_pengaduan,
+            'tgl_pengaduan'=>$request->tanggal_pengaduan,
             'foto'=>$request->foto,
-            'isi_laporan'=>$request->isi_laporan
+            'isi_laporan'=>$request->isi_laporan,
+            'status'=>'0'
         ]);
-        return redirect('/masyarakat/pengaduan')->with('pesan','Laporan berhasil dikirim');
+        return back()->with('pesan','Laporan berhasil dikirim');
     }
     //tampilan masyarakat
     public function dashboard(){

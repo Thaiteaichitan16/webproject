@@ -38,7 +38,7 @@ Route::get('login',[MasyarakatController::class,'login']);
 Route::post('login',[MasyarakatController::class,'ceklogin']);
 //buat laporan
 Route::get('pengaduan',[MasyarakatController::class,'pengaduan']);
-Route::post('laporan',[MasyarakatController::class,'laporan']);
+Route::post('pengaduan',[MasyarakatController::class,'laporan']);
 });
 // Route::get('logout',[MasyarakatController::class,'logout']);
 
