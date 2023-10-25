@@ -7,6 +7,11 @@
     <title>Regis | Admin</title>
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/bootstrap-icon.min.css">
+    <style>
+        body{
+            background: linear-gradient(100deg,#D8B4F8,#a5dee5,#ffcfdf);
+        }
+    </style>
 </head>
 <body>
     
@@ -28,7 +33,7 @@
                       Gagal Registrasi
                     </div>
                 @endif
-                <form action="{{url('data')}}" method="POST">
+                <form action="{{url('admin/register')}}" method="POST">
                     <div class="mb-3">
                         @csrf
                         <label for="nama_petugas" class="form-label">Nama</label>

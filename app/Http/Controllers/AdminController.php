@@ -28,7 +28,7 @@ class AdminController extends Controller
         session()->flush();
         return back();
     }
-    public function register(){
+    public function registrasi(){
         return view("Admin.registrasi");
     }
     public function data(Request $request){
@@ -38,7 +38,7 @@ class AdminController extends Controller
             'username' => 'required|min:6',
             'password' => 'required|min:4',
             'telp' => 'required|max:13',
-            'level'=>'required'
+            'level'=> 'required'
         ]);
         $c->create($request->all());
        
@@ -46,8 +46,7 @@ class AdminController extends Controller
         return back()->with('Pesan', 'anda berasil registrasi');
     
     }
-    // public function pengaduan()
-    // {
-    //     return view('Admin.pengaduan');
-    // }
+    public function dash(){
+        return view('Admin.dash');
+    }
 }

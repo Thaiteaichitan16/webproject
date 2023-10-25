@@ -34,13 +34,13 @@
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/tampilankedua">Home</a>
+                    <a class="nav-link active" aria-current="page" href="{{url('masyarakat/masyarakat')}}">Home</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="#">Laporan</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="/pengaduan">Pengaduan</a>
+                    <a class="nav-link" href="{{url('masyarakat/pengaduan')}}">Pengaduan</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="#">Riwayat Laporan</a>
@@ -49,7 +49,7 @@
                 </ul>
                 <form class="d-flex">
                   {{-- <button type="button" class="Masuk"><a href="#">Masuk</a></button> --}}
-                  <button type="button" class="Logout"><a href="/logout">Logout</a></button>
+                  <button type="button" class="Logout"><a href="{{url('masyarakat/logout')}}">Logout</a></button>
                 </form>
               </div>
             </div>

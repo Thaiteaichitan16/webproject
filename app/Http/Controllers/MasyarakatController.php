@@ -77,7 +77,8 @@ public function simpan(Request $request){
     }
     // halaman logout
     public function logout(){
-        return view('Masyarakat.logout');
+        session()->flush();
+        return back();
     }
       
     

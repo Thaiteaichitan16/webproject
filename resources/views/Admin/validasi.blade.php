@@ -37,15 +37,15 @@
                             <td>{{$item->nik}}</td>
                             <td>{{$item->isi_laporan}}</td>
                             <td>{{$item->foto}}</td>
-                            <td>{{$item->status}}</td>
-                            <td >
-                                <a href="{{url('siswa/edit/'.$item->nisn)}}" class="btn btn-success btn-sm">
+                            <td>{{$item->status}}</td>nb 
+                            {{-- <td >
+                                <a href="{{url('siswa/edit/'.$item->nik)}}" class="btn btn-success btn-sm">
                                     <i class="bi bi-pencil-square"></i>
                                 </a>
-                                <a href="{{url('siswa/hapus/'.$item->nisn)}}" class="btn btn-danger btn-sm">
+                                <a href="{{url('siswa/hapus/'.$item->nik)}}" class="btn btn-danger btn-sm">
                                     <i class="bi bi-trash-fill"></i>
                                 </a>
-                            </td>
+                            </td> --}}
                         </tr>
                         @endforeach
                        

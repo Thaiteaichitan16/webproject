@@ -18,7 +18,7 @@
                       Gagal Registrasi
                     </div>
                 @endif
-                <form action="{{url('simpan')}}" method="POST">
+                <form action="{{url('masyarakat/registrasi')}}" method="POST">
                     <div class="mb-3">
                         @csrf
                         <label for="nik" class="form-label">NIK</label>

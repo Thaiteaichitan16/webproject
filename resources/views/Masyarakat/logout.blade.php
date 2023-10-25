@@ -61,13 +61,13 @@
         <div class="box1">
         <div class="top-header">
         <form action="" method="post">
-        <header>Logout</header>
+        <header>Logout|Masyarakat</header>
         <header>Apakah Anda yakin akan Logout dari aku ini?</header>
         </div>
         
         
         <div class="input-field">
-        <input type="submit" class="submit" value="Yes">
+        <a href=""><input type="submit" class="submit" value="Yes"></a>
         </div>
         <div class="input-field">
             <input type="submit" class="submit" value="No">
