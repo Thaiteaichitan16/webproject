@@ -9,6 +9,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <style>
         /* Style untuk tampilan daftar produk */
+        * {
+            font-family: 'poppins', sans serif;
+        }
         body{
           background: linear-gradient(120deg,#ffcfdf,#a5dee5 );
         }
@@ -66,9 +69,6 @@
                     <div class="container">
                             <div class="card shadow m-auto" style="width: 400px">
                                 <div class="card-body">
-                                  <div class="alert alert-danger" role="alert">
-                                    Terimakasih Sudah Melapor!
-                                  </div>
                                     <h4 class="h4">Tulis Laporan Anda</h4>
                                     @if (session('pesan'))
                                     <div class="alert alert-success" role="alert">
@@ -80,7 +80,7 @@
                                         Anda Gagal Lapor
                                       </div>
                                     @endif
-                                        <form action="{{url('masyarakat/pengaduan')}}" method="POST">
+                                        <form action="{{url('masyarakat/pengaduan')}}" method="POST" enctype="multipart/form-data">
                                             @csrf
                                             <div class="mb-3">
                                                 <label for="nik" class="form-label">NIK</label>
@@ -92,8 +92,8 @@
                                                 @enderror
                                                 <div class="mb-3">    
                                                 <label for="tanggal_pengaduan" class="form-label">Tanggal Pengaduan</label>
-                                                <input type="date" class="form-control" name="tanggal_pengaduan" id="nama" placeholder="tanggal_pengaduan">
-                                                @error('tanggal_pengaduan')
+                                                <input type="date" class="form-control" name="tgl_pengaduan" id="tgl_pengaduan" placeholder="tanggal_pengaduan">
+                                                @error('tgl_pengaduan')
                                                     <div class="form-text">
                                                         {{$message}}
                                                     </div>

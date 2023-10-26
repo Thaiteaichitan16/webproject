@@ -56,5 +56,7 @@ Route::prefix('admin')->group(function(){
     Route::post('login',[AdminController::class,'ceklogin']);
     Route::get('register',[AdminController::class,'registrasi']);
     Route::post('register',[AdminController::class,'data']);
+    Route::get('validasi',[AdminController::class,'validasi']);
+    
     
 });

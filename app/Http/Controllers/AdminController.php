@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Masyarakat;
+use App\Models\Pengaduan;
 use App\Models\Petugas;
 use Illuminate\Http\Request;
 
@@ -48,5 +50,10 @@ class AdminController extends Controller
     }
     public function dash(){
         return view('Admin.dash');
+    }
+
+    public function validasi(){
+        $ambil = new Pengaduan();
+        return view ('Admin.validasi',['val'=>$ambil->all()]);
     }
 }

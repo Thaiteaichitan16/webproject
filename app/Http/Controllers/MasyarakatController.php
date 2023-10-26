@@ -54,19 +54,25 @@ public function simpan(Request $request){
     }
     public function laporan(Request $request){
         $ya = new Pengaduan();
+
+        $foto = $request->file('foto');
+        $folder = 'upload_data';
+        $foto->move($folder,$foto->getClientOriginalName());
+    
+
+    
         $p = $request->validate([
             'nik'=>'required|max:16',
-            'tgl_pengaduan'=>'required|date',
-            'foto'=>'required',
+            'tgl_pengaduan'=>'required',
             'isi_laporan'=>'required'
-        ]);
+         ]);
 
        
         $ya->create([
-            'nik'=>$request->nik,
-            'tgl_pengaduan'=>$request->tanggal_pengaduan,
-            'foto'=>$request->foto,
-            'isi_laporan'=>$request->isi_laporan,
+            'nik'=>$request->input('nik'),
+            'tgl_pengaduan'=>$request->input('tgl_pengaduan'),
+            'foto'=> $foto->getClientOriginalName(),
+            'isi_laporan'=>$request->input('isi_laporan'),
             'status'=>'0'
         ]);
         return back()->with('pesan','Laporan berhasil dikirim');

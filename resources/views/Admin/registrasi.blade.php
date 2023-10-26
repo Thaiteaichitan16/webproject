@@ -66,7 +66,7 @@
                         @enderror
                         <label for="level" class="col-form-label col-2">Level</label>
                         <div class="col-10">
-                        <select class="form-select" id="level" required>
+                        <select class="form-select" id="level" name="level">
                           <option>Admin</option>
                           <option>Petugas</option>
                         </select>
