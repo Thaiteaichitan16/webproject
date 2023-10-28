@@ -39,6 +39,7 @@ public function simpan(Request $request){
     public function login(){
         return view('Masyarakat.login');
     }
+    
 
     public function ceklogin(Request $request){
         $m = new Masyarakat();
@@ -81,10 +82,16 @@ public function simpan(Request $request){
     public function dashboard(){
         return view('Masyarakat.dashboard');
     }
+    public function dashboardL(){
+        return view('Layoututama');
+    }
     // halaman logout
     public function logout(){
         session()->flush();
         return back();
+    }
+    public function logouty(){
+        return view('logout');
     }
       
     

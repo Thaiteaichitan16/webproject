@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard|Masyarakat</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+   
 </head>
 <style>
   /* Style untuk tampilan daftar produk */
@@ -33,7 +34,7 @@
         justify-content: center;
         padding: 10px 0 10px 0;
         }
-
+       
       
 </style>
 
@@ -63,14 +64,17 @@
       </ul>
       <form class="d-flex">
         {{-- <button type="button" class="Masuk"><a href="#">Masuk</a></button> --}}
-        <button type="button" class="Logout"><a href="/logout">Logout</a></button>
+        <button type="button" class="Logout"><a href="{{url('masyarakat/logout')}}">Logout</a></button>
       </form>
     </div>
   </div>
 </nav>
 
-{{-- // tampilan surat  --}}
-@yield('isisurat')
+<div>
+  <h1>Selamat Datang di Website SIAPLAPOR</h1>
+  <header> Sampaikan laporan Anda langsung kepada instansi pemerintah berwenang </header>
+</div>
+
 		</tbody>
   
 </body>

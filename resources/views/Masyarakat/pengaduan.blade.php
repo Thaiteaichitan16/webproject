@@ -25,104 +25,100 @@
       
             
       </style>
-</head>
-<body>
-        {{-- tampilan navbar --}}
+ </head>
+ <body>
+              {{-- tampilan navbar --}}
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
-            <div class="container-fluid">
-              <a class="navbar-brand" href="#">SIAP LAPOR</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{{url('masyarakat/masyarakat')}}">Home</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Laporan</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="{{url('masyarakat/pengaduan')}}">Pengaduan</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Riwayat Laporan</a>
-                  </li>
-                    
-                </ul>
-                <form class="d-flex">
-                  {{-- <button type="button" class="Masuk"><a href="#">Masuk</a></button> --}}
-                  <button type="button" class="Logout"><a href="{{url('masyarakat/logout')}}">Logout</a></button>
-                </form>
-              </div>
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">SIAP LAPOR</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="{{url('masyarakat/masyarakat')}}">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Laporan</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{{url('masyarakat/pengaduan')}}">Pengaduan</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Riwayat Laporan</a>
+                </li>
+                  
+              </ul>
+              <form class="d-flex">
+               
+                <button type="button" class="Logout"><a href="{{url('masyarakat/logout')}}">Logout</a></button>
+              </form>
             </div>
-          </nav>
-          
-    
-          </head>
-          
-                  </tbody>
-              </table>
-
-
+          </div>
+        </nav>
+        {{-- tampilan pengaduan --}}
         <div id="main" class="d-flex align-items-center vh-100">
-                    <div class="container">
-                            <div class="card shadow m-auto" style="width: 400px">
-                                <div class="card-body">
-                                    <h4 class="h4">Tulis Laporan Anda</h4>
-                                    @if (session('pesan'))
-                                    <div class="alert alert-success" role="alert">
-                                        {{session('pesan')}}
+          <div class="container">
+                  <div class="card shadow m-auto" style="width: 400px">
+                      <div class="card-body">
+                          <h4 class="h4">Tulis Laporan Anda</h4>
+                          @if (session('pesan'))
+                          <div class="alert alert-success" role="alert">
+                              {{session('pesan')}}
+                            </div>
+                          @endif
+                          @if ($errors->any())
+                          <div class="alert alert-success" role="alert">
+                              Anda Gagal Lapor
+                            </div>
+                          @endif
+                              <form action="{{url('masyarakat/pengaduan')}}" method="POST" enctype="multipart/form-data">
+                                  @csrf
+                                  <div class="mb-3">
+                                      <label for="nik" class="form-label">NIK</label>
+                                      <input type="text" class="form-control" name="nik" id="nik" placeholder="NIK">
+                                      @error('nik')
+                                          <div class="form-text">
+                                              {{$message}}
+                                          </div>
+                                      @enderror
+                                      <div class="mb-3">    
+                                      <label for="tanggal_pengaduan" class="form-label">Tanggal Pengaduan</label>
+                                      <input type="date" class="form-control" name="tgl_pengaduan" id="tgl_pengaduan" placeholder="tanggal_pengaduan">
+                                      @error('tgl_pengaduan')
+                                          <div class="form-text">
+                                              {{$message}}
+                                          </div>
+                                      @enderror
                                       </div>
-                                    @endif
-                                    @if ($errors->any())
-                                    <div class="alert alert-success" role="alert">
-                                        Anda Gagal Lapor
+                                      <div class="mb-3">    
+                                          <label for="formFile" class="form-label">Foto</label>
+                                          <input class="form-control" type="file" name="foto" id="formFile">
+                                      @error('foto')
+                                          <div class="form-text">
+                                              {{$message}}
+                                          </div>
+                                      @enderror
+                                  </div>
+                                      <div class="mb-3">    
+                                          <label for="isi_laporan" class="form-label">Isi Laporan</label>
+                                          <textarea class="form-control" name="isi_laporan" id="isi_laporan" rows="3"></textarea>
+                                      @error('isi_laporan')
+                                          <div class="form-text">
+                                              {{$message}}
+                                          </div>
+                                      @enderror
                                       </div>
-                                    @endif
-                                        <form action="{{url('masyarakat/pengaduan')}}" method="POST" enctype="multipart/form-data">
-                                            @csrf
-                                            <div class="mb-3">
-                                                <label for="nik" class="form-label">NIK</label>
-                                                <input type="text" class="form-control" name="nik" id="nik" placeholder="NIK">
-                                                @error('nik')
-                                                    <div class="form-text">
-                                                        {{$message}}
-                                                    </div>
-                                                @enderror
-                                                <div class="mb-3">    
-                                                <label for="tanggal_pengaduan" class="form-label">Tanggal Pengaduan</label>
-                                                <input type="date" class="form-control" name="tgl_pengaduan" id="tgl_pengaduan" placeholder="tanggal_pengaduan">
-                                                @error('tgl_pengaduan')
-                                                    <div class="form-text">
-                                                        {{$message}}
-                                                    </div>
-                                                @enderror
-                                                </div>
-                                                <div class="mb-3">    
-                                                    <label for="formFile" class="form-label">Foto</label>
-                                                    <input class="form-control" type="file" name="foto" id="formFile">
-                                                @error('foto')
-                                                    <div class="form-text">
-                                                        {{$message}}
-                                                    </div>
-                                                @enderror
-                                            </div>
-                                                <div class="mb-3">    
-                                                    <label for="isi_laporan" class="form-label">Isi Laporan</label>
-                                                    <textarea class="form-control" name="isi_laporan" id="isi_laporan" rows="3"></textarea>
-                                                @error('isi_laporan')
-                                                    <div class="form-text">
-                                                        {{$message}}
-                                                    </div>
-                                                @enderror
-                                                </div>
-                                                <button class="btn form-control btn-primary mb-2">Lapor</button>
-                                                <button class="btn form-control btn-outline-success mb-2" type="reset">Batal</button>
-                                        </form>    
-                                </div>    
-                            </div>    
-                    </div>   
-        </div>    
-</body>
-</html>
+                                      <button class="btn form-control btn-primary mb-2">Lapor</button>
+                                      <button class="btn form-control btn-outline-success mb-2" type="reset">Batal</button>
+                              </form>    
+                      </div>    
+                  </div>    
+          </div>   
+        </div>  
+
+ </body>
+ </html>
+
+      

@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard|Admin</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/icons/bootstrap-icons.min.css">
 </head>
 <style>
   /* Style untuk tampilan daftar produk */
@@ -48,13 +50,13 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#"></a>
+          <a class="nav-link active" aria-current="page" href="{{url('admin/dash')}}">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Laporan</a>
+          <a class="nav-link" href="#">Tanggapan</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/pengaduan">Pengaduan</a>
+          <a class="nav-link" href="{{url('admin/validasi')}}">Validasi</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Riwayat Laporan</a>
@@ -68,10 +70,54 @@
     </div>
   </div>
 </nav>
+<div>
+  <h1>Selamat Datang di Website SIAPLAPOR</h1>
+  <header> Sampaikan laporan Anda langsung kepada instansi pemerintah berwenang </header>
+</div>
+
+{{-- validasi --}}
+<body class="bg-body-secondary">
+  <div class="container pt-5 my-4">
+      <div class="card shadow">
+          <div class="card" >
+              <h5 class="card-header headertabel">Status Pengaduan</h5>
+              <div class="card-body">
+                  {{-- <h5 class="card-title"></h5> --}}
+                  <table class=" table table-striped-columns">
+                      <thead>
+                                      <th>NIK</th>
+                                      <th>Tanggal</th>
+                                      <th>Isi Laporan</th>
+                                      <th>Foto</th>
+                                      <th>Status</th>
+                                      <th>Aksi</th>
+                                  </thead>
+                                  <tbody>
+                                    @foreach ($val as $aduan)
+                                    <tr>
+                                      <td>{{$aduan->nik}}</td>
+                                      <td>{{$aduan->tgl_pengaduan}}</td>
+                                      <td>{{$aduan->isi_laporan}}</td>
+                                      <td>{{$aduan->foto}}</td>
+                                      <td>{{$aduan->status}}</td>
+                                      <td>
+                                        <a href="#" class="btn btn-secondary"><i class="bi bi-pencil-fill"></i></a>
+                                        <a href="#" class="btn btn-danger"><i class="bi bi-trash"></i></a>
+                                      </td>
+                                    </tr>
+                                    @endforeach
+                                  </tbody>
+                              </table></p>
+                          </div>
+                      </div>
+                  </div>
+                  </div>
+                {{-- akhir nambah konten --}}
+                <script src="js\bootstrap.bundle.min.js"></script>
 
 {{-- // tampilan surat  --}}
 {{-- @yield('isisurat') --}}
-		</tbody>
+		
   
 </body>
 </html>

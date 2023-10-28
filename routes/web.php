@@ -31,6 +31,7 @@ Route::prefix('masyarakat')->group(function(){
         return view('Masyarakat.dashboard');
     })->middleware(MasyarakatMiddleware::class);
 Route::get('masyarakat',[MasyarakatController::class,'dashboard']);
+Route::get('awal',[MasyarakatController::class,'dashboardL']);
 Route::get('registrasi',[MasyarakatController::class,'registrasi']);
 Route::post('registrasi',[MasyarakatController::class,'simpan']);
 //data login
@@ -57,6 +58,6 @@ Route::prefix('admin')->group(function(){
     Route::get('register',[AdminController::class,'registrasi']);
     Route::post('register',[AdminController::class,'data']);
     Route::get('validasi',[AdminController::class,'validasi']);
-    
+    Route::get('logout',[AdminController::class,'logout']);
     
 });

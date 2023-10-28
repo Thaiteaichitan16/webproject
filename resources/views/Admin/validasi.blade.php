@@ -17,8 +17,45 @@
         body{
             background: linear-gradient(100deg,#D8B4F8,#a5dee5,#ffcfdf);
         }
+        button{
+			background-color: #ffcfdf;
+			color: white;
+
+        }
     </style>
 </head>
+{{-- tampilan navbar --}}
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">SIAP LAPOR</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Tanggapan</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="">Validasi</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Riwayat Laporan</a>
+          </li>
+            
+        </ul>
+        <form class="d-flex">
+          {{-- <button type="button" class="Masuk"><a href="#">Masuk</a></button> --}}
+          <button type="button" class="Logout"><a href="/logout">Logout</a></button>
+        </form>
+      </div>
+    </div>
+  </nav>
+  
+{{-- validasi --}}
 <body class="bg-body-secondary">
     <div class="container pt-5 my-4">
         <div class="card shadow">

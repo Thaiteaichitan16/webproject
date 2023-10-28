@@ -49,7 +49,8 @@ class AdminController extends Controller
     
     }
     public function dash(){
-        return view('Admin.dash');
+        $ambil = new Pengaduan();
+        return view('Admin.dash',['val'=>$ambil->all()]);
     }
 
     public function validasi(){
