@@ -38,8 +38,8 @@ Route::post('registrasi',[MasyarakatController::class,'simpan']);
 Route::get('login',[MasyarakatController::class,'login']);
 Route::post('login',[MasyarakatController::class,'ceklogin']);
 //buat laporan
-Route::get('pengaduan',[MasyarakatController::class,'pengaduan']);
-Route::post('pengaduan',[MasyarakatController::class,'laporan']);
+Route::get('pengaduan',[MasyarakatController::class,'pengaduan'])->middleware(MasyarakatMiddleware::class);
+Route::post('pengaduan',[MasyarakatController::class,'laporan'])->middleware(MasyarakatMiddleware::class);
 //logout
 Route::get('logout',[MasyarakatController::class,'logout']);
 });
@@ -49,15 +49,13 @@ Route::get('logout',[MasyarakatController::class,'logout']);
 Route::get('validasi',[AdminController::class,'validasi']);
 
 Route::prefix('admin')->group(function(){
-    Route::get('/',function(){
-        return view('Admin.dash');
-    })->middleware(validasiAdmin::class);
-    Route::get('dash',[AdminController::class,'dash']);
+    Route::get('/',[AdminController::class,'dash'])->middleware(validasiAdmin::class);
     Route::get('login',[AdminController::class,'login']);
     Route::post('login',[AdminController::class,'ceklogin']);
     Route::get('register',[AdminController::class,'registrasi']);
     Route::post('register',[AdminController::class,'data']);
-    Route::get('validasi',[AdminController::class,'validasi']);
+    Route::get('validasi',[AdminController::class,'validasi'])->middleware(validasiAdmin::class);
+    Route::get('status/{id}',[AdminController::class,'status'])->middleware(validasiAdmin::class);
     Route::get('logout',[AdminController::class,'logout']);
     
 });

@@ -28,7 +28,7 @@ class AdminController extends Controller
     }   
     public function logout(){
         session()->flush();
-        return back();
+        return redirect('/admin/login');
     }
     public function registrasi(){
         return view("Admin.registrasi");
@@ -45,16 +45,21 @@ class AdminController extends Controller
         $c->create($request->all());
        
     
-        return back()->with('Pesan', 'anda berasil registrasi');
+        return back()->with('Pesan','Anda berhasil registrasi');
     
     }
     public function dash(){
-        $ambil = new Pengaduan();
-        return view('Admin.dash',['val'=>$ambil->all()]);
+        $cokot = new Pengaduan();
+        return view('Admin.dash',['val'=>$cokot->all()]);
     }
 
     public function validasi(){
         $ambil = new Pengaduan();
         return view ('Admin.validasi',['val'=>$ambil->all()]);
     }
+     public function status($id){
+        $lapor = new Pengaduan();
+        $lapor->find($id)->update(['status'=>'proses']);
+        return back();
+     }
 }

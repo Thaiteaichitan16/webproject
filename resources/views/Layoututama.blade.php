@@ -57,7 +57,7 @@
       <header> Sampaikan laporan Anda langsung kepada instansi pemerintah berwenang </header>
     </div>
 {{-- // tampilan surat  --}}
-  @yield('isisurat')
+  
 		</tbody>
 	
 </body>

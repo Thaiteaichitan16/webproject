@@ -34,13 +34,13 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="">Home</a>
+            <a class="nav-link active" aria-current="page" href="{{url('/admin')}}">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Tanggapan</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="">Validasi</a>
+            <a class="nav-link" href="{{url('admin/validasi')}}">Validasi</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Riwayat Laporan</a>
@@ -65,25 +65,27 @@
                     {{-- <h5 class="card-title"></h5> --}}
                     <table class=" table table-striped-columns">
                         <thead>
+                                        <th>No</th>
                                         <th>NIK</th>
                                         <th>Tanggal</th>
                                         <th>Isi Laporan</th>
                                         <th>Foto</th>
-                                        <th>Status</th>
                                         <th>Aksi</th>
                                     </thead>
                                     <tbody>
                                       @foreach ($val as $aduan)
                                       <tr>
+                                        <td>{{$aduan->id_pengaduan}}</td>
                                         <td>{{$aduan->nik}}</td>
                                         <td>{{$aduan->tgl_pengaduan}}</td>
                                         <td>{{$aduan->isi_laporan}}</td>
                                         <td>{{$aduan->foto}}</td>
-                                        <td>{{$aduan->status}}</td>
+                                        
                                         <td>
-                                          <a href="#" class="btn btn-secondary"><i class="bi bi-pencil-fill"></i></a>
-                                          <a href="#" class="btn btn-danger"><i class="bi bi-trash"></i></a>
+                                          <a href="{{url('admin/status/'.$aduan->id_pengaduan)}}" class="btn btn-secondary"><i class="bi bi-pencil-fill"></i></a>
+                                          
                                         </td>
+                                        <td></td>
                                       </tr>
                                       @endforeach
                                     </tbody>

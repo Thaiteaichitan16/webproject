@@ -50,7 +50,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="{{url('admin/dash')}}">Home</a>
+          <a class="nav-link active" aria-current="page" href="{{url('/admin')}}">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Tanggapan</a>
@@ -65,7 +65,7 @@
       </ul>
       <form class="d-flex">
         {{-- <button type="button" class="Masuk"><a href="#">Masuk</a></button> --}}
-        <button type="button" class="Logout"><a href="/logout">Logout</a></button>
+        <button type="button" class="Logout"><a href="{{url('admin/logout')}}">Logout</a></button>
       </form>
     </div>
   </div>
@@ -90,7 +90,7 @@
                                       <th>Isi Laporan</th>
                                       <th>Foto</th>
                                       <th>Status</th>
-                                      <th>Aksi</th>
+                                      
                                   </thead>
                                   <tbody>
                                     @foreach ($val as $aduan)
@@ -99,11 +99,21 @@
                                       <td>{{$aduan->tgl_pengaduan}}</td>
                                       <td>{{$aduan->isi_laporan}}</td>
                                       <td>{{$aduan->foto}}</td>
-                                      <td>{{$aduan->status}}</td>
+                                
                                       <td>
-                                        <a href="#" class="btn btn-secondary"><i class="bi bi-pencil-fill"></i></a>
-                                        <a href="#" class="btn btn-danger"><i class="bi bi-trash"></i></a>
+                                       @switch($aduan->status)
+                                           @case('proses')
+                                               proses
+                                               @break
+                                           @case('selesai')
+                                               selesai
+                                               @break
+                                           @default
+                                               tertunda
+                                       @endswitch
+                                        
                                       </td>
+                                      
                                     </tr>
                                     @endforeach
                                   </tbody>

@@ -134,7 +134,7 @@
                         <label for="check">Remember me</label>
                     </div>
                     <div class="left">
-                        <label><a href="#">Forgot password?</a></label>
+                        <label><a href="{{url('/admin/register')}}">Registrasi</a></label>
                     </div>
                 </div>
                 </form>

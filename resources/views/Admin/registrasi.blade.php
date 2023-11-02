@@ -79,6 +79,9 @@
                     </div>
                     <button class="btn form-control btn-primary mb-2">Registrasi</button>
                     <button class="btn form-control btn-outline-success mb-2">Batal</button>
+                    <div class="left">
+                        <label><a href="{{url('/admin/login')}}">Sudah Punya Akun</a></label>
+                    </div>
                 </form>
             </div>
         </div>

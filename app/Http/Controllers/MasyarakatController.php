@@ -33,7 +33,7 @@ public function simpan(Request $request){
             'password'=>$request->password,
             'telp'=>$request->telp
         ]);
-    return back()->with('pesan','Selamat, Registrasi Berhasil');
+    return back()->with('pesan','Registrasi Anda Berhasil');
     }
     // halaman login
     public function login(){
@@ -88,10 +88,10 @@ public function simpan(Request $request){
     // halaman logout
     public function logout(){
         session()->flush();
-        return back();
+        return redirect('/masyarakat/login');
     }
-    public function logouty(){
-        return view('logout');
+    public function layout(){
+        return view('Layoututama');
     }
       
     
