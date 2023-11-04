@@ -62,4 +62,11 @@ class AdminController extends Controller
         $lapor->find($id)->update(['status'=>'proses']);
         return back();
      }
+     public function tanggapan(){
+        return view("Admin.tanggapan");
+    }
+    public function tanggapi(){
+        $ambil = new Pengaduan();
+        return view ('Admin.validasi',['val'=>$ambil->all()]);
+    }
 }

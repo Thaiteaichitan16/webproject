@@ -51,15 +51,15 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="{{url('masyarakat/masyarakat')}}"></a>
         </li>
-        <li class="nav-item">
+        {{-- <li class="nav-item">
           <a class="nav-link" href="#">Laporan</a>
-        </li>
+        </li> --}}
         <li class="nav-item">
           <a class="nav-link" href="{{url('masyarakat/pengaduan')}}">Pengaduan</a>
         </li>
-        <li class="nav-item">
+        {{-- <li class="nav-item">
           <a class="nav-link" href="#">Riwayat Laporan</a>
-        </li>
+        </li> --}}
           
       </ul>
       <form class="d-flex">

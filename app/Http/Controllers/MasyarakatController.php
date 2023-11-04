@@ -62,16 +62,16 @@ public function simpan(Request $request){
     
 
     
-        $p = $request->validate([
-            'nik'=>'required|max:16',
-            'tgl_pengaduan'=>'required',
-            'isi_laporan'=>'required'
-         ]);
+        // $p = $request->validate([
+        //     'nik'=>'required|max:16',
+        //     'tgl_pengaduan'=>'required',
+        //     'isi_laporan'=>'required'
+        //  ]);
 
        
         $ya->create([
             'nik'=>$request->input('nik'),
-            'tgl_pengaduan'=>$request->input('tgl_pengaduan'),
+            'tgl_pengaduan'=>date('y-m-d'),
             'foto'=> $foto->getClientOriginalName(),
             'isi_laporan'=>$request->input('isi_laporan'),
             'status'=>'0'

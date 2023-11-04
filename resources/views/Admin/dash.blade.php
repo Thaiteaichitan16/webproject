@@ -11,6 +11,9 @@
 </head>
 <style>
   /* Style untuk tampilan daftar produk */
+  * {
+            font-family: 'poppins', sans serif;
+        }
   body{
     background: linear-gradient(100deg,#D8B4F8,#a5dee5,#ffcfdf);
   }
@@ -53,19 +56,20 @@
           <a class="nav-link active" aria-current="page" href="{{url('/admin')}}">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Tanggapan</a>
+          <a class="nav-link" href="{{url('admin/tanggapan')}}">Tanggapan</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{{url('admin/validasi')}}">Validasi</a>
         </li>
-        <li class="nav-item">
+        {{-- <li class="nav-item">
           <a class="nav-link" href="#">Riwayat Laporan</a>
         </li>
-          
+           --}}
       </ul>
       <form class="d-flex">
         {{-- <button type="button" class="Masuk"><a href="#">Masuk</a></button> --}}
-        <button type="button" class="Logout"><a href="{{url('admin/logout')}}">Logout</a></button>
+        <button type="button" class="Logout"><a href="{{url('admin/login')}}">Logout</a></button>
+        <button type="button" class="Register"><a href="{{url('admin/register')}}">Registrasi</a></button>
       </form>
     </div>
   </div>
@@ -85,6 +89,7 @@
                   {{-- <h5 class="card-title"></h5> --}}
                   <table class=" table table-striped-columns">
                       <thead>
+                                      <th>No</th>
                                       <th>NIK</th>
                                       <th>Tanggal</th>
                                       <th>Isi Laporan</th>
@@ -95,21 +100,22 @@
                                   <tbody>
                                     @foreach ($val as $aduan)
                                     <tr>
+                                      <td>{{$aduan->id_pengaduan}}</td>
                                       <td>{{$aduan->nik}}</td>
                                       <td>{{$aduan->tgl_pengaduan}}</td>
                                       <td>{{$aduan->isi_laporan}}</td>
-                                      <td>{{$aduan->foto}}</td>
+                                      <td><img src="/upload_data/{{$aduan->foto}}" alt="" style="width:50px"></td>
                                 
                                       <td>
                                        @switch($aduan->status)
-                                           @case('proses')
-                                               proses
+                                           @case('Proses')
+                                               Proses
                                                @break
-                                           @case('selesai')
-                                               selesai
+                                           @case('Selesai')
+                                               Selesai
                                                @break
                                            @default
-                                               tertunda
+                                               Tertunda
                                        @endswitch
                                         
                                       </td>

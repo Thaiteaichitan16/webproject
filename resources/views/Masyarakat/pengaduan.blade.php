@@ -83,15 +83,15 @@
                                               {{$message}}
                                           </div>
                                       @enderror
-                                      <div class="mb-3">    
+                                      {{-- <div class="mb-3">    
                                       <label for="tanggal_pengaduan" class="form-label">Tanggal Pengaduan</label>
                                       <input type="date" class="form-control" name="tgl_pengaduan" id="tgl_pengaduan" placeholder="tanggal_pengaduan">
                                       @error('tgl_pengaduan')
                                           <div class="form-text">
                                               {{$message}}
                                           </div>
-                                      @enderror
-                                      </div>
+                                      @enderror --}}
+                                      {{-- </div> --}}
                                       <div class="mb-3">    
                                           <label for="formFile" class="form-label">Foto</label>
                                           <input class="form-control" type="file" name="foto" id="formFile">

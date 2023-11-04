@@ -38,8 +38,8 @@ Route::post('registrasi',[MasyarakatController::class,'simpan']);
 Route::get('login',[MasyarakatController::class,'login']);
 Route::post('login',[MasyarakatController::class,'ceklogin']);
 //buat laporan
-Route::get('pengaduan',[MasyarakatController::class,'pengaduan'])->middleware(MasyarakatMiddleware::class);
-Route::post('pengaduan',[MasyarakatController::class,'laporan'])->middleware(MasyarakatMiddleware::class);
+Route::get('pengaduan',[MasyarakatController::class,'pengaduan']);
+Route::post('pengaduan',[MasyarakatController::class,'laporan']);
 //logout
 Route::get('logout',[MasyarakatController::class,'logout']);
 });
@@ -57,5 +57,6 @@ Route::prefix('admin')->group(function(){
     Route::get('validasi',[AdminController::class,'validasi'])->middleware(validasiAdmin::class);
     Route::get('status/{id}',[AdminController::class,'status'])->middleware(validasiAdmin::class);
     Route::get('logout',[AdminController::class,'logout']);
+    Route::get('tanggapan',[AdminController::class,'tanggapi'])->middleware(validasiAdmin::class);
     
 });
